@@ -1,36 +1,32 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPrincipal.aspx.cs" Inherits="SGPI.AdminPrincipal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="coordinadoEntrevistas.aspx.cs" Inherits="SGPI.coordinadoEntrevistas" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Administrador</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Coordinador</title>
 </head>
 <body>
-
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" href="AdminPrincipal.aspx">Modulo Administrador</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="AdminReportes.aspx">Modulo Reportes</a>
-        </li>
-        </ul>
-    <form id="form1" runat="server">
-        <div>
-            <div class="navbar navbar-inverse navbar-fixed-top">
+     <br /> <br />
+     <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
+                     <h1>Coordinador</h1>
                     <div class="navbar-header">
-                        <a class="navbar-brand active" runat="server" href="~/AdminPrincipal">Crear Usuario</a>
-                        <a class="navbar-brand" runat="server" href="~/AdminModificar">Modificar Usuario</a>
-                        <a class="navbar-brand" runat="server" href="~/AdminEliminar">Eliminar Usuario</a>
+                        <a class="navbar-brand active" runat="server" href="~/coordinador">Modulo consulta</a>
+                        <a class="navbar-brand" runat="server" href="~/coordinadorProgramarAsignaturas">Modulo programar asignaturas</a>
+                        <a class="navbar-brand" runat="server" href="~/coordinadorHomologacion">Homologacion</a>
+                        <a class="navbar-brand" runat="server" href="~/coordinadoEntrevistas">Entrevistas</a>
+                     
                     </div>
                 </div>
             </div>
-
-            <div class="container">
+     <br />
+     <br />
+    <form id="form1" runat="server">
+         <div class="container">
                 <h5>Usuario :&nbsp; <asp:Label ID="lblMostrarUsuario" runat="server" Text="Sesión no iniciada"></asp:Label></h5>
  <asp:Button ID="btnCerrarSesion"  class="btn btn-danger" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesion_Click" /> 
                 <div class="abs-center">
@@ -85,7 +81,7 @@
                                 </div>
                            <div class="form-group col">
                            <span class="input-group-text">Correo electronico :&nbsp; <asp:TextBox ID="TxtCorreoElectronicoUsuario" class="form-control" runat="server" placeholder="Correo electronico" Width="500px" type="email"></asp:TextBox></span>
-                               <span class="input-group-text">Contraseña:&nbsp; <asp:TextBox ID="TxtContraseña" class="form-control" runat="server" placeholder="Contraseña" Width="500px" ></asp:TextBox></span>
+                              
                            </div>        
                            
                             </div>
@@ -96,53 +92,59 @@
                         <div class="input-group  mb-3">
                             <div class="input-group-prepend"> 
                                 <div class="form-group col">
-                                  <span class="input-group-text">Rol</span>
-                                    <asp:RadioButtonList class="radio" ID="RadioButtonList1" runat="server">
-                                        <asp:ListItem>Estudiante</asp:ListItem>
-                                        <asp:ListItem>Coordinador</asp:ListItem>
+                             
+                                  
+                            
+                                <span class="input-group-text">Programa a ingresar</span>
+                                    <asp:RadioButtonList ID="OpcionesProgramas" runat="server" Class="form-control">
+                                        <asp:ListItem>Especializacion Seguridad de la informacion</asp:ListItem>
+                                        <asp:ListItem>Maestria en gestio TI</asp:ListItem>
+                                        <asp:ListItem>Maestria en Gestion Ambiental</asp:ListItem>
+                                        <asp:ListItem>Tecnico en sistemas</asp:ListItem>
                                     </asp:RadioButtonList>
 
 
 
 
+                                </div>
 
-                                    </div></div>
-                              <div class="form-group col">
-                                <span class="input-group-text">Programa</span>
-                                <asp:RadioButtonList ID="OpcionesProgramas" runat="server" Class="form-control">
-                                    <asp:ListItem>Especializacion Seguridad de la informacion</asp:ListItem>
-                                    <asp:ListItem>Maestria en gestio TI</asp:ListItem>
-                                    <asp:ListItem>Maestria en Gestion Ambiental</asp:ListItem>
-                                    <asp:ListItem>Tecnico en sistemas</asp:ListItem>
-                                </asp:RadioButtonList>
                             </div>
-                        </div></div>
-                       
-            
-
-
-
-
-
-
-
-
+                            <div class="col">
+                                <span class="input-group-text">Egresado<asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="100px">
+                                    <asp:ListItem>Si</asp:ListItem>
+                                    <asp:ListItem>No</asp:ListItem>
+                                </asp:DropDownList></span>
+                            </div>
+                        </div>
                     </div>
-                 <div class="abs-center">
+             <br />
                      <br />
                      <br />
-                <asp:Button ID="btnCrear"  class="btn btn-success mb-2 " runat="server" Text="Crear"  Width="88px" OnClick="btnCrear_Click" />
+                     <br />
+                    <!---------------------------------------------------------------------------------------------------------------->
+                       <div class="row">
+                        <div class="input-group  mb-3">
+                            <div class="input-group-prepend">
 
-            <asp:Button ID="btnCancelar"  class="btn btn-danger mb-2" runat="server" Text="Cancelar" OnClick="btnCancelar_Click"  />
+                                <asp:FileUpload ID="FileUpload2" runat="server" CssClass="form-control" Width="350px"/>
+                                </div></div></div>
+                    <!---------------------------------------------------------------------------------------------------------------->
+                  
+                       
+      <asp:Button ID="btnIngresar" CssClass="btn btn-success" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
+    
+  
+     <asp:Button ID="btnExportar" CssClass="btn btn-secondary" runat="server" Text="Exportar" OnClick="btnExportar_Click" />
+   
+   
+      <asp:Button ID="btnCancelar" CssClass="btn btn-danger" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+ 
 
-                     </div>
 
+                                
+                                
+                    <!---------------------------------------------------------------------------------------------------------------->
 
-
-
-                </div>
-            </div>
-        
     </form>
 </body>
 </html>

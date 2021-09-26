@@ -11,7 +11,7 @@ namespace SGPI
 {
 
 
-    public partial class AdminPrincipal
+    public partial class estudianteModificar
     {
 
         /// <summary>
@@ -123,13 +123,22 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.RadioButtonList OpcionesProgramas;
 
         /// <summary>
-        /// Control btnCrear.
+        /// Control FileUpload1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// Control btnActualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
 
         /// <summary>
         /// Control btnCancelar.

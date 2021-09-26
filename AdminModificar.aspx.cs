@@ -13,5 +13,15 @@ namespace SGPI
         {
 
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/AdminPrincipal");
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/inicio");
+        }
     }
 }

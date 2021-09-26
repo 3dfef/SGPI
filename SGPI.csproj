@@ -108,7 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdminEliminar.aspx" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="AdminReportes.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -121,7 +123,14 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="coordinadoEntrevistas.aspx" />
+    <Content Include="coordinador.aspx" />
+    <Content Include="coordinadorHomologacion.aspx" />
+    <Content Include="coordinadorProgramarAsignaturas.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Estudiante.aspx" />
+    <Content Include="estudianteMatricula.aspx" />
+    <Content Include="estudianteModificar.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -134,6 +143,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\Admin.png" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\coordinadoe.jpg" />
+    <Content Include="Images\estudiante.jpg" />
     <Content Include="inicio.aspx" />
     <Content Include="recuperarContraseña.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -161,6 +174,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="MenuOpciones.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\87818-1.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -206,12 +220,26 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminEliminar.aspx.cs">
+      <DependentUpon>AdminEliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminEliminar.aspx.designer.cs">
+      <DependentUpon>AdminEliminar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPrincipal.aspx.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPrincipal.aspx.designer.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminReportes.aspx.cs">
+      <DependentUpon>AdminReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminReportes.aspx.designer.cs">
+      <DependentUpon>AdminReportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -229,12 +257,61 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="coordinadoEntrevistas.aspx.cs">
+      <DependentUpon>coordinadoEntrevistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinadoEntrevistas.aspx.designer.cs">
+      <DependentUpon>coordinadoEntrevistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinador.aspx.cs">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinador.aspx.designer.cs">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinadorHomologacion.aspx.cs">
+      <DependentUpon>coordinadorHomologacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinadorHomologacion.aspx.designer.cs">
+      <DependentUpon>coordinadorHomologacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinadorProgramarAsignaturas.aspx.cs">
+      <DependentUpon>coordinadorProgramarAsignaturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinadorProgramarAsignaturas.aspx.designer.cs">
+      <DependentUpon>coordinadorProgramarAsignaturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiante.aspx.cs">
+      <DependentUpon>Estudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiante.aspx.designer.cs">
+      <DependentUpon>Estudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estudianteMatricula.aspx.cs">
+      <DependentUpon>estudianteMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estudianteMatricula.aspx.designer.cs">
+      <DependentUpon>estudianteMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estudianteModificar.aspx.cs">
+      <DependentUpon>estudianteModificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estudianteModificar.aspx.designer.cs">
+      <DependentUpon>estudianteModificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +365,13 @@
     </Compile>
     <Compile Include="AdminModificar.aspx.designer.cs">
       <DependentUpon>AdminModificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuOpciones.aspx.cs">
+      <DependentUpon>MenuOpciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuOpciones.aspx.designer.cs">
+      <DependentUpon>MenuOpciones.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

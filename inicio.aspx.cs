@@ -16,7 +16,7 @@ namespace SGPI
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/adminPrincipal.aspx");
+            Response.Redirect("/MenuOpciones.aspx");
         }
     }
 }

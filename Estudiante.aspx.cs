@@ -7,21 +7,22 @@ using System.Web.UI.WebControls;
 
 namespace SGPI
 {
-    public partial class AdminPrincipal : System.Web.UI.Page
+    public partial class Estudiante : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
+
+        protected void btnModificar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/inicio.aspx");
+            Response.Redirect("/estudianteModificar.aspx");
         }
 
-        protected void btnCrear_Click(object sender, EventArgs e)
+        protected void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/MenuOpciones.aspx");
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace SGPI
 {
 
 
-    public partial class AdminPrincipal
+    public partial class Estudiante
     {
 
         /// <summary>
@@ -42,15 +42,6 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
 
         /// <summary>
-        /// Control TxtTipoDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TxtTipoDocumento;
-
-        /// <summary>
         /// Control TxtNumeroDocumentoUsuario.
         /// </summary>
         /// <remarks>
@@ -78,15 +69,6 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.TextBox TxtApellidosUsuario;
 
         /// <summary>
-        /// Control txtGenero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtGenero;
-
-        /// <summary>
         /// Control TxtCorreoElectronicoUsuario.
         /// </summary>
         /// <remarks>
@@ -96,40 +78,13 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.TextBox TxtCorreoElectronicoUsuario;
 
         /// <summary>
-        /// Control TxtContraseña.
+        /// Control btnModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtContraseña;
-
-        /// <summary>
-        /// Control RadioButtonList1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
-
-        /// <summary>
-        /// Control OpcionesProgramas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList OpcionesProgramas;
-
-        /// <summary>
-        /// Control btnCrear.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
 
         /// <summary>
         /// Control btnCancelar.
