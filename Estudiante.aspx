@@ -60,7 +60,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                  <div class="form-group col">
-                           <span class="input-group-text">Correo electronico :&nbsp; <asp:TextBox ID="TxtCorreoElectronicoUsuario" class="form-control" runat="server" placeholder="Correo electronico" Width="500px" type="email"></asp:TextBox>
+                           <span class="input-group-text">Correo electronico &nbsp; <asp:TextBox ID="TxtCorreoElectronicoUsuario" class="form-control" runat="server" placeholder="Correo electronico" Width="500px" type="email"></asp:TextBox>
                                      <br />
                                      </span>
                                

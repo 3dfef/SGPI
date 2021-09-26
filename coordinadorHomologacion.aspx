@@ -110,10 +110,10 @@
                <div class="row">
                         <div class="form-group col">
                             <div class="input-group mt-3 mb-3">
-
+                                 <div class="row justify-content-center">
                                 <asp:Button ID="BtnExportar" runat="server" Text="Exportar" CssClass="btn btn-success" OnClick="BtnExportar_Click"/>
                                 <asp:Button ID="BtnVolver" runat="server" Text="Volver" CssClass="btn btn-secondary" OnClick="BtnVolver_Click" />
-                                </div></div></div>
+                                </div></div></div></div>
                     <!---------------------------------------------------------------------------------------------------------------->
 
                                 </div></div>
