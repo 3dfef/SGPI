@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Linq;
 
 namespace SGPI
 {
@@ -21,7 +22,22 @@ namespace SGPI
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
+            Criptografia criptografia = new Criptografia();
+            using (EntitiesDB DBEntities = new EntitiesDB())
+            {
+                Usuario usuario = new Usuario();
+                usuario.Documento = TxtNumeroDocumentoUsuario.Text;
+                usuario.IdDocumento = Convert.ToInt32(TxtTipoDocumento.SelectedValue);
+                usuario.Nombre = TxtNombreUsuario.Text;
+                usuario.Apellido = TxtApellidosUsuario.Text;
+                usuario.IdGenero = Convert.ToInt32(txtGenero.SelectedValue);
+                usuario.Email = TxtCorreoElectronicoUsuario.Text;
+                usuario.IdRol = Convert.ToInt32(txtRol.SelectedValue);
+                usuario.Contraseña = criptografia.CodigoHash(criptografia.GenerarPass());
+                usuario.IdPrograma = Convert.ToInt32(OpcionesProgramas.SelectedValue);
 
+              
+            }
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

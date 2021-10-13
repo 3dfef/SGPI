@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Linq;
+
 
 namespace SGPI
 {
@@ -17,19 +17,23 @@ namespace SGPI
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            using (EntitiesDB DBEntities = new EntitiesDB())
-
-                
+            Session["IdUsuario"] = String.Empty;
+            using (EntitiesDB DBEntities = new EntitiesDB())              
             {
-                Usuario usr = new Usuario();
+
+                Criptografia criptografia = new Criptografia();
+                string hashpass = criptografia.CodigoHash(TxtContraseña.Text);
+           
 
                 try {
-                   Usuario usuario = DBEntities.Usuario.FirstOrDefault(a => a.Documento == TxtUsuario.Text && a.Contraseña == TxtContraseña.Text);
+                   Usuario usuario = DBEntities.Usuario.FirstOrDefault(a => a.Documento == TxtUsuario.Text && 
+                   a.Contraseña == hashpass);
                    
                    
                     if (usuario != null)
                     {
-                        switch (usuario.Rol.IdRol)
+                        Session["IdUsuario"] = usuario.IdUsuario;
+                        switch (usuario.IdRol)
                         {
                             case 1:
                                 Response.Redirect("~/AdminPrincipal.aspx");
