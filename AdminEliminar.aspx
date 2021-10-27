@@ -44,7 +44,7 @@
 
 
                                 <asp:TextBox ID="TxtBuscarDocumentoEliminar" class="form-control" runat="server" placeholder="Ingrese documento a buscar" Width="120px"></asp:TextBox>
-                                <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-success" />
+                                <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-success" OnClick="BtnBuscar_Click" />
                               
 
                             </div>
@@ -55,16 +55,33 @@
                       <div class="row">
                         <div class="form-group col">
                             <div class="input-group mt-3 mb-3">
-                                  <asp:GridView  ID="GrvEliminar" class="table table-bordered" runat="server"  AutoGenerateColumns="False"  Width="1110px" OnSelectedIndexChanged="GrvEliminar_SelectedIndexChanged">
-                                    <Columns>
-                                        <asp:BoundField HeaderText="Numero de documento" DataField="Documento"/>
-                                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                                        <asp:BoundField HeaderText="Rol" DataField="Rol" />
-                                        <asp:BoundField HeaderText="Programa Academico" DataField="Programa" />
-                                        <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar" />
-                                    </Columns>
+                                  <asp:GridView  ID="GrvEliminar" class="table table-bordered" runat="server"  AutoGenerateColumns="False"  Width="1110px" OnSelectedIndexChanged="GrvEliminar_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataKeyNames="IdUsuario">
+                                      <Columns>
+                                          <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" SortExpression="IdUsuario" ReadOnly="True" />
+                                          <asp:BoundField DataField="Documento" HeaderText="Documento" SortExpression="Documento" />                 
+                                          <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                          <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                                          <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                                          <asp:BoundField DataField="Rol" HeaderText="Rol" SortExpression="Rol" />
+                                          <asp:BoundField DataField="Programa" HeaderText="Programa" SortExpression="Programa" />
+                                          <asp:BoundField DataField="Genero" HeaderText="Genero" SortExpression="Genero" />
+                                          <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
+                                      </Columns>
                                 </asp:GridView>
+                                 
+                                 
+                                 
+                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" DeleteCommand="DELETE FROM [Usuario] WHERE [IdUsuario] = @IdUsuario" SelectCommand="SELECT Usuario.IdUsuario, Usuario.Documento, Usuario.Nombre, Usuario.Apellido, Usuario.Email, Rol.Rol, Programa.Programa, Genero.Genero FROM Usuario INNER JOIN Rol ON Usuario.IdRol = Rol.IdRol INNER JOIN Genero ON Usuario.IdGenero = Genero.IdGenero INNER JOIN Programa ON Usuario.IdPrograma = Programa.IdPrograma WHERE (Usuario.Documento = @Documento)">
+                                      <DeleteParameters>
+                                          <asp:Parameter Name="IdUsuario" Type="Int32" />
+                                      </DeleteParameters>
+                                      <SelectParameters>
+                                          <asp:ControlParameter ControlID="TxtBuscarDocumentoEliminar" Name="Documento" PropertyName="Text" Type="String" />
+                                      </SelectParameters>
+                                  </asp:SqlDataSource>
+                                 
+                                 
+                                 
                                   <br />
                                   <br />
                                 </div>

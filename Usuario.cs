@@ -23,14 +23,14 @@ namespace SGPI
     
         public int IdUsuario { get; set; }
         public string Documento { get; set; }
-        public int IdDocumento { get; set; }
+        public Nullable<int> IdDocumento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public int IdGenero { get; set; }
+        public Nullable<int> IdGenero { get; set; }
         public string Email { get; set; }
-        public int IdRol { get; set; }
+        public Nullable<int> IdRol { get; set; }
         public string Contraseña { get; set; }
-        public int IdPrograma { get; set; }
+        public Nullable<int> IdPrograma { get; set; }
     
         public virtual Documento Documento1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

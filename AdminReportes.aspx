@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminReportes.aspx.cs" Inherits="SGPI.AdminReportes" %>
+﻿<%@ Page Language="C#" Debug="true"  AutoEventWireup="true" CodeBehind="AdminReportes.aspx.cs" Inherits="SGPI.AdminReportes" %>
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +11,9 @@
     <title></title>
 </head>
 <body>
+
     <form id="form1" runat="server">
+        <asp:scriptmanager id="ScriptManager1" runat="server" enablepagemethods="true" xmlns:asp="#unknown" />
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link" href="AdminPrincipal.aspx">Modulo Administrador</a>
@@ -66,6 +70,38 @@
                     </div>
 
 <!---------------------------------------------------------------------------------------------------------------->
+                    <div class="row">
+                        <div class="form-group col">
+                            <div class="input-group mt-3 mb-3">
+                                <rsweb:ReportViewer ID="ReportViewer2" runat="server" BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                                    <LocalReport ReportPath="Reporte\ReporteAdmin.rdlc">
+                                    </LocalReport>
+                                    
+
+                                </rsweb:ReportViewer>
+                                </div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               <div class="abs-center">
                   
                     <asp:Button ID="btnCancelar" class="btn btn-danger mb-2" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />

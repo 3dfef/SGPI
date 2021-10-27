@@ -25,7 +25,7 @@ namespace SGPI
             GrvReportes.DataSource = dt;
             GrvReportes.DataBind();
             GrvReportes.UseAccessibleHeader = true;
-            GrvReportes.HeaderRow.TableSection = TableRowSection.TableHeader;
+            
         }
 
 

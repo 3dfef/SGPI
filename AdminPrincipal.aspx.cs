@@ -23,9 +23,10 @@ namespace SGPI
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Criptografia criptografia = new Criptografia();
-            using (EntitiesDB DBEntities = new EntitiesDB())
+            using (EntitiesDBSGPI DBEntitiesR = new EntitiesDBSGPI())
             {
                 Usuario usuario = new Usuario();
+                usuario.IdUsuario = usuario.IdUsuario ;
                 usuario.Documento = TxtNumeroDocumentoUsuario.Text;
                 usuario.IdDocumento = Convert.ToInt32(TxtTipoDocumento.SelectedValue);
                 usuario.Nombre = TxtNombreUsuario.Text;
@@ -36,7 +37,39 @@ namespace SGPI
                 usuario.Contraseña = criptografia.CodigoHash(criptografia.GenerarPass());
                 usuario.IdPrograma = Convert.ToInt32(OpcionesProgramas.SelectedValue);
 
-              
+               usuario = DBEntitiesR.Usuario.Add(usuario);
+                try
+                {
+                 DBEntitiesR.SaveChanges();
+                    if (usuario.IdUsuario != 0)
+                    {
+                        Response.Write("<script>alert('Usuario  " + usuario.Nombre + "Ha sido registrado')</script>");
+                        
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert(' Problemas con el registro , intente nuevamente')</script>");
+                    }
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting  
+                            // the current instance as InnerException  
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
+               
             }
         }
 
