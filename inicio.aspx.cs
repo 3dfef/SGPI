@@ -18,7 +18,7 @@ namespace SGPI
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             Session["IdUsuario"] = String.Empty;
-            using (EntitiesDB DBEntities = new EntitiesDB())              
+            using (EntitiesDBSGPI DBEntities = new EntitiesDBSGPI())              
             {
 
                 Criptografia criptografia = new Criptografia();

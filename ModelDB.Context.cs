@@ -13,10 +13,10 @@ namespace SGPI
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EntitiesDB : DbContext
+    public partial class EntitiesDBSGPI : DbContext
     {
-        public EntitiesDB()
-            : base("name=EntitiesDB")
+        public EntitiesDBSGPI()
+            : base("name=EntitiesDBSGPI")
         {
         }
     

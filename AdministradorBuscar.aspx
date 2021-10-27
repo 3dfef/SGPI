@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminModificar.aspx.cs" Inherits="SGPI.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministradorBuscar.aspx.cs" Inherits="SGPI.AdministradorBuscar" %>
 
 <!DOCTYPE html>
 
@@ -25,8 +25,7 @@
                 <div class="container">
 
                     <div class="navbar-header">
-                        <a class="navbar-brand" runat="server" href="~/AdminPrincipal">Crear Usuario</a>
-                              <a class="navbar-brand" runat="server" href="~/AdministradorBuscar">Buscar Usuario</a>
+                        <a class="navbar-brand" runat="server" href="~/AdminPrincipal">Crear Usuario</a> <a href="~/AdministradorBuscar">yy</a>
                         <a class="navbar-brand active" runat="server" href="~/AdminModificar">Modificar Usuario</a>
                         <a class="navbar-brand" runat="server" href="~/AdminEliminar">Eliminar Usuario</a>
                     </div>
@@ -54,10 +53,10 @@
                             <div class="input-group mt-3 mb-3">
 
                                 <span class="input-group-text">Tipo documento&nbsp;&nbsp; 
-                                    <asp:DropDownList ID="TxtSeelectTipoDocumento" runat="server" DataSourceID="SqlDataSource4" DataTextField="TipoDocumento" DataValueField="IdDocumento">
+                                    <asp:DropDownList ID="TxtTipoDocumento" runat="server" DataSourceID="SqlDataSource2" DataTextField="TipoDocumento" DataValueField="IdDocumento">
 
                                     </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Documento]"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Documento]"></asp:SqlDataSource>
                                 </span>
                                 <asp:TextBox ID="TxtNumeroDocumentoUsuario" class="form-control" runat="server" placeholder="Numero de documento" Width="150px"></asp:TextBox>
                             </div>
@@ -85,9 +84,10 @@
                             <div class="input-group-prepend">
                                 <div class="form-group col">
                                     <span class="input-group-text">Genero&nbsp;&nbsp;
-                                        <asp:DropDownList ID="txtSelectGenero" runat="server" Width="182px" DataSourceID="SqlDataSource3" DataTextField="Genero" DataValueField="IdGenero">
+                                        <asp:DropDownList ID="txtSeleccionGenero" runat="server" Width="182px" DataSourceID="SqlDataSource3" DataTextField="Genero" DataValueField="IdGenero">
                                         </asp:DropDownList>
                                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Genero]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Genero]"></asp:SqlDataSource>
                                     </span>
                                 </div>
                             </div>
@@ -107,20 +107,16 @@
                             <div class="input-group-prepend">
                                 <div class="form-group col">
                                     <span class="input-group-text">Rol</span>
-                                    <asp:RadioButtonList class="radio" ID="txtSelectRol" runat="server" DataSourceID="SqlDataSource1" DataTextField="Rol" DataValueField="IdRol">
+                                    <asp:RadioButtonList class="radio" ID="txtSeleccionRol" runat="server" DataSourceID="SqlDataSource4" DataTextField="Rol" DataValueField="IdRol">
                                     </asp:RadioButtonList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Rol]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Rol]"></asp:SqlDataSource>
                                 </div>
                             </div>
                             <div class="form-group col">
                                 <span class="input-group-text">Programa</span>
-                                <asp:RadioButtonList ID="txtSelectPrograma" runat="server" Class="form-control" DataSourceID="SqlDataSource2" DataTextField="Programa" DataValueField="IdPrograma">
-                                    <asp:ListItem>Especializacion Seguridad de la informacion</asp:ListItem>
-                                    <asp:ListItem>Maestria en gestio TI</asp:ListItem>
-                                    <asp:ListItem>Maestria en Gestion Ambiental</asp:ListItem>
-                                    <asp:ListItem>Tecnico en sistemas</asp:ListItem>
+                                <asp:RadioButtonList ID="txtSeleccionPrograma" runat="server" Class="form-control" DataSourceID="SqlDataSource5" DataTextField="Programa" DataValueField="IdPrograma">
                                 </asp:RadioButtonList>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Programa]"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT * FROM [Programa]"></asp:SqlDataSource>
                             </div>
                         </div>
                     </div>
@@ -134,8 +130,8 @@
                 <br />
                 <!---------------------------Botones--------------------------------------------------------------------------->
                 <div class="abs-center">
-                    <asp:Button ID="btnModificar" class="btn btn-success mb-2 " runat="server" Text="Modificar" OnClick="btnModificar_Click" />
-                    <asp:Button ID="btnCancelar" class="btn btn-danger mb-2" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+              
+                    <asp:Button ID="btnCancelar" class="btn btn-danger mb-2" runat="server" Text="Volver" OnClick="btnCancelar_Click"  />
                 </div>
             </div>
 

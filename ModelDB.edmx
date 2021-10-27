@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModelDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ModelSGPI.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Asignatura">
           <Key>
             <PropertyRef Name="IdAsignatura" />
@@ -110,15 +110,15 @@
             <PropertyRef Name="IdUsuario" />
           </Key>
           <Property Name="IdUsuario" Type="int" Nullable="false" />
-          <Property Name="Documento" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="IdDocumento" Type="int" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="30" />
-          <Property Name="Apellido" Type="varchar" MaxLength="10" />
-          <Property Name="IdGenero" Type="int" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="30" />
-          <Property Name="IdRol" Type="int" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="11" />
+          <Property Name="IdDocumento" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="60" />
+          <Property Name="Apellido" Type="varchar" MaxLength="60" />
+          <Property Name="IdGenero" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="IdRol" Type="int" />
           <Property Name="Contraseña" Type="varchar" MaxLength="100" />
-          <Property Name="IdPrograma" Type="int" Nullable="false" />
+          <Property Name="IdPrograma" Type="int" />
         </EntityType>
         <Association Name="FK__Entrevist__IdEst__49C3F6B7">
           <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
@@ -252,8 +252,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdDocum__2B3F6F97">
-          <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdDocum__5AEE82B9">
+          <End Role="Documento" Type="Self.Documento" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Documento">
@@ -264,8 +264,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdGener__2C3393D0">
-          <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdGener__5BE2A6F2">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genero">
@@ -276,8 +276,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdProgr__34C8D9D1">
-          <End Role="Programa" Type="Self.Programa" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdProgr__5CD6CB2B">
+          <End Role="Programa" Type="Self.Programa" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Programa">
@@ -288,8 +288,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdRol__2D27B809">
-          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdRol__5DCAEF64">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rol">
@@ -300,7 +300,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelDBStoreContainer">
+        <EntityContainer Name="ModelSGPIStoreContainer">
           <EntitySet Name="Asignatura" EntityType="Self.Asignatura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Entrevista" EntityType="Self.Entrevista" Schema="dbo" store:Type="Tables" />
@@ -357,19 +357,19 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Programacion" EntitySet="Programacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdDocum__2B3F6F97" Association="Self.FK__Usuario__IdDocum__2B3F6F97">
+          <AssociationSet Name="FK__Usuario__IdDocum__5AEE82B9" Association="Self.FK__Usuario__IdDocum__5AEE82B9">
             <End Role="Documento" EntitySet="Documento" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdGener__2C3393D0" Association="Self.FK__Usuario__IdGener__2C3393D0">
+          <AssociationSet Name="FK__Usuario__IdGener__5BE2A6F2" Association="Self.FK__Usuario__IdGener__5BE2A6F2">
             <End Role="Genero" EntitySet="Genero" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdProgr__34C8D9D1" Association="Self.FK__Usuario__IdProgr__34C8D9D1">
+          <AssociationSet Name="FK__Usuario__IdProgr__5CD6CB2B" Association="Self.FK__Usuario__IdProgr__5CD6CB2B">
             <End Role="Programa" EntitySet="Programa" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdRol__2D27B809" Association="Self.FK__Usuario__IdRol__2D27B809">
+          <AssociationSet Name="FK__Usuario__IdRol__5DCAEF64" Association="Self.FK__Usuario__IdRol__5DCAEF64">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -378,7 +378,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ModelDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ModelSGPI" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Asignatura">
           <Key>
             <PropertyRef Name="IdAsignatura" />
@@ -398,7 +398,7 @@
           </Key>
           <Property Name="IdDocumento" Type="Int32" Nullable="false" />
           <Property Name="TipoDocumento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdDocum__2B3F6F97" FromRole="Documento" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdDocum__5AEE82B9" FromRole="Documento" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Entrevista">
           <Key>
@@ -430,7 +430,7 @@
           </Key>
           <Property Name="IdGenero" Type="Int32" Nullable="false" />
           <Property Name="Genero1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdGener__2C3393D0" FromRole="Genero" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdGener__5BE2A6F2" FromRole="Genero" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Homologacion">
           <Key>
@@ -469,7 +469,7 @@
           <Property Name="Programa1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Homologacion" Relationship="Self.FK__Homologac__IdPro__3F466844" FromRole="Programa" ToRole="Homologacion" />
           <NavigationProperty Name="Programacion" Relationship="Self.FK__Programac__IdPro__35BCFE0A" FromRole="Programa" ToRole="Programacion" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdProgr__34C8D9D1" FromRole="Programa" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdProgr__5CD6CB2B" FromRole="Programa" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Programacion">
           <Key>
@@ -493,7 +493,7 @@
           <Property Name="IdRol" Type="Int32" Nullable="false" />
           <Property Name="Rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Estudiante" Relationship="Self.FK__Estudiant__IdRol__33D4B598" FromRole="Rol" ToRole="Estudiante" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdRol__2D27B809" FromRole="Rol" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__IdRol__5DCAEF64" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="TipoHomologacion">
           <Key>
@@ -508,21 +508,21 @@
             <PropertyRef Name="IdUsuario" />
           </Key>
           <Property Name="IdUsuario" Type="Int32" Nullable="false" />
-          <Property Name="Documento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IdDocumento" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="IdGenero" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="IdRol" Type="Int32" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="IdDocumento" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="IdGenero" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IdRol" Type="Int32" />
           <Property Name="Contraseña" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IdPrograma" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Documento1" Relationship="Self.FK__Usuario__IdDocum__2B3F6F97" FromRole="Usuario" ToRole="Documento" />
+          <Property Name="IdPrograma" Type="Int32" />
+          <NavigationProperty Name="Documento1" Relationship="Self.FK__Usuario__IdDocum__5AEE82B9" FromRole="Usuario" ToRole="Documento" />
           <NavigationProperty Name="Entrevista" Relationship="Self.FK__Entrevist__IdUsu__48CFD27E" FromRole="Usuario" ToRole="Entrevista" />
-          <NavigationProperty Name="Genero" Relationship="Self.FK__Usuario__IdGener__2C3393D0" FromRole="Usuario" ToRole="Genero" />
-          <NavigationProperty Name="Programa" Relationship="Self.FK__Usuario__IdProgr__34C8D9D1" FromRole="Usuario" ToRole="Programa" />
+          <NavigationProperty Name="Genero" Relationship="Self.FK__Usuario__IdGener__5BE2A6F2" FromRole="Usuario" ToRole="Genero" />
+          <NavigationProperty Name="Programa" Relationship="Self.FK__Usuario__IdProgr__5CD6CB2B" FromRole="Usuario" ToRole="Programa" />
           <NavigationProperty Name="Programacion" Relationship="Self.FK__Programac__IdUsu__37A5467C" FromRole="Usuario" ToRole="Programacion" />
-          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__IdRol__2D27B809" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__IdRol__5DCAEF64" FromRole="Usuario" ToRole="Rol" />
         </EntityType>
         <Association Name="FK__Homologac__IdAsi__403A8C7D">
           <End Role="Asignatura" Type="Self.Asignatura" Multiplicity="1" />
@@ -548,8 +548,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdDocum__2B3F6F97">
-          <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdDocum__5AEE82B9">
+          <End Role="Documento" Type="Self.Documento" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Documento">
@@ -620,8 +620,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdGener__2C3393D0">
-          <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdGener__5BE2A6F2">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genero">
@@ -668,8 +668,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdProgr__34C8D9D1">
-          <End Role="Programa" Type="Self.Programa" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdProgr__5CD6CB2B">
+          <End Role="Programa" Type="Self.Programa" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Programa">
@@ -692,8 +692,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdRol__2D27B809">
-          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+        <Association Name="FK__Usuario__IdRol__5DCAEF64">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rol">
@@ -704,7 +704,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EntitiesDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EntitiesDBSGPI" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Asignatura" EntityType="Self.Asignatura" />
           <EntitySet Name="Documento" EntityType="Self.Documento" />
           <EntitySet Name="Entrevista" EntityType="Self.Entrevista" />
@@ -725,7 +725,7 @@
             <End Role="Asignatura" EntitySet="Asignatura" />
             <End Role="Programacion" EntitySet="Programacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdDocum__2B3F6F97" Association="Self.FK__Usuario__IdDocum__2B3F6F97">
+          <AssociationSet Name="FK__Usuario__IdDocum__5AEE82B9" Association="Self.FK__Usuario__IdDocum__5AEE82B9">
             <End Role="Documento" EntitySet="Documento" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -749,7 +749,7 @@
             <End Role="Estudiante" EntitySet="Estudiante" />
             <End Role="Homologacion" EntitySet="Homologacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdGener__2C3393D0" Association="Self.FK__Usuario__IdGener__2C3393D0">
+          <AssociationSet Name="FK__Usuario__IdGener__5BE2A6F2" Association="Self.FK__Usuario__IdGener__5BE2A6F2">
             <End Role="Genero" EntitySet="Genero" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -765,7 +765,7 @@
             <End Role="Programa" EntitySet="Programa" />
             <End Role="Programacion" EntitySet="Programacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdProgr__34C8D9D1" Association="Self.FK__Usuario__IdProgr__34C8D9D1">
+          <AssociationSet Name="FK__Usuario__IdProgr__5CD6CB2B" Association="Self.FK__Usuario__IdProgr__5CD6CB2B">
             <End Role="Programa" EntitySet="Programa" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -773,7 +773,7 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Programacion" EntitySet="Programacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdRol__2D27B809" Association="Self.FK__Usuario__IdRol__2D27B809">
+          <AssociationSet Name="FK__Usuario__IdRol__5DCAEF64" Association="Self.FK__Usuario__IdRol__5DCAEF64">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -783,9 +783,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelDBStoreContainer" CdmEntityContainer="EntitiesDB">
+        <EntityContainerMapping StorageEntityContainer="ModelSGPIStoreContainer" CdmEntityContainer="EntitiesDBSGPI">
           <EntitySetMapping Name="Asignatura">
-            <EntityTypeMapping TypeName="ModelDB.Asignatura">
+            <EntityTypeMapping TypeName="ModelSGPI.Asignatura">
               <MappingFragment StoreEntitySet="Asignatura">
                 <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -797,7 +797,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Documento">
-            <EntityTypeMapping TypeName="ModelDB.Documento">
+            <EntityTypeMapping TypeName="ModelSGPI.Documento">
               <MappingFragment StoreEntitySet="Documento">
                 <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
                 <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
@@ -805,7 +805,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Entrevista">
-            <EntityTypeMapping TypeName="ModelDB.Entrevista">
+            <EntityTypeMapping TypeName="ModelSGPI.Entrevista">
               <MappingFragment StoreEntitySet="Entrevista">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
@@ -815,7 +815,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Estudiante">
-            <EntityTypeMapping TypeName="ModelDB.Estudiante">
+            <EntityTypeMapping TypeName="ModelSGPI.Estudiante">
               <MappingFragment StoreEntitySet="Estudiante">
                 <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
                 <ScalarProperty Name="Archivo" ColumnName="Archivo" />
@@ -825,7 +825,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Genero">
-            <EntityTypeMapping TypeName="ModelDB.Genero">
+            <EntityTypeMapping TypeName="ModelSGPI.Genero">
               <MappingFragment StoreEntitySet="Genero">
                 <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
                 <ScalarProperty Name="Genero1" ColumnName="Genero" />
@@ -833,7 +833,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Homologacion">
-            <EntityTypeMapping TypeName="ModelDB.Homologacion">
+            <EntityTypeMapping TypeName="ModelSGPI.Homologacion">
               <MappingFragment StoreEntitySet="Homologacion">
                 <ScalarProperty Name="IdHomologacion" ColumnName="IdHomologacion" />
                 <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
@@ -849,7 +849,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pagos">
-            <EntityTypeMapping TypeName="ModelDB.Pagos">
+            <EntityTypeMapping TypeName="ModelSGPI.Pagos">
               <MappingFragment StoreEntitySet="Pagos">
                 <ScalarProperty Name="IdPagos" ColumnName="IdPagos" />
                 <ScalarProperty Name="ValorPago" ColumnName="ValorPago" />
@@ -859,7 +859,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Programa">
-            <EntityTypeMapping TypeName="ModelDB.Programa">
+            <EntityTypeMapping TypeName="ModelSGPI.Programa">
               <MappingFragment StoreEntitySet="Programa">
                 <ScalarProperty Name="IdPrograma" ColumnName="IdPrograma" />
                 <ScalarProperty Name="Programa1" ColumnName="Programa" />
@@ -867,7 +867,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Programacion">
-            <EntityTypeMapping TypeName="ModelDB.Programacion">
+            <EntityTypeMapping TypeName="ModelSGPI.Programacion">
               <MappingFragment StoreEntitySet="Programacion">
                 <ScalarProperty Name="IdProgramacion" ColumnName="IdProgramacion" />
                 <ScalarProperty Name="PeriodoAcademico" ColumnName="PeriodoAcademico" />
@@ -880,7 +880,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rol">
-            <EntityTypeMapping TypeName="ModelDB.Rol">
+            <EntityTypeMapping TypeName="ModelSGPI.Rol">
               <MappingFragment StoreEntitySet="Rol">
                 <ScalarProperty Name="IdRol" ColumnName="IdRol" />
                 <ScalarProperty Name="Rol1" ColumnName="Rol" />
@@ -888,7 +888,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoHomologacion">
-            <EntityTypeMapping TypeName="ModelDB.TipoHomologacion">
+            <EntityTypeMapping TypeName="ModelSGPI.TipoHomologacion">
               <MappingFragment StoreEntitySet="TipoHomologacion">
                 <ScalarProperty Name="IdTipoHomologacion" ColumnName="IdTipoHomologacion" />
                 <ScalarProperty Name="TipoHomologacion1" ColumnName="TipoHomologacion" />
@@ -896,7 +896,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="ModelDB.Usuario">
+            <EntityTypeMapping TypeName="ModelSGPI.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Documento" ColumnName="Documento" />

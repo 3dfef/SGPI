@@ -11,7 +11,7 @@ namespace SGPI
 {
 
 
-    public partial class WebForm1
+    public partial class AdministradorBuscar
     {
 
         /// <summary>
@@ -60,22 +60,22 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
 
         /// <summary>
-        /// Control TxtSeelectTipoDocumento.
+        /// Control TxtTipoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TxtSeelectTipoDocumento;
+        protected global::System.Web.UI.WebControls.DropDownList TxtTipoDocumento;
 
         /// <summary>
-        /// Control SqlDataSource4.
+        /// Control SqlDataSource2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
         /// Control TxtNumeroDocumentoUsuario.
@@ -105,13 +105,13 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.TextBox TxtApellidosUsuario;
 
         /// <summary>
-        /// Control txtSelectGenero.
+        /// Control txtSeleccionGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtSelectGenero;
+        protected global::System.Web.UI.WebControls.DropDownList txtSeleccionGenero;
 
         /// <summary>
         /// Control SqlDataSource3.
@@ -121,6 +121,15 @@ namespace SGPI
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+
+        /// <summary>
+        /// Control SqlDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
         /// Control TxtCorreoElectronicoUsuario.
@@ -141,49 +150,40 @@ namespace SGPI
         protected global::System.Web.UI.WebControls.TextBox TxtContraseña;
 
         /// <summary>
-        /// Control txtSelectRol.
+        /// Control txtSeleccionRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList txtSelectRol;
+        protected global::System.Web.UI.WebControls.RadioButtonList txtSeleccionRol;
 
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control SqlDataSource4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
 
         /// <summary>
-        /// Control txtSelectPrograma.
+        /// Control txtSeleccionPrograma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList txtSelectPrograma;
+        protected global::System.Web.UI.WebControls.RadioButtonList txtSeleccionPrograma;
 
         /// <summary>
-        /// Control SqlDataSource2.
+        /// Control SqlDataSource5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-
-        /// <summary>
-        /// Control btnModificar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource5;
 
         /// <summary>
         /// Control btnCancelar.
