@@ -25,7 +25,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand active" runat="server" href="~/AdminPrincipal">Crear Usuario</a>
-                              <a class="navbar-brand" runat="server" href="~/AdministradorBuscar">Buscar Usuario</a>
+                            
                         <a class="navbar-brand" runat="server" href="~/AdminModificar">Modificar Usuario</a>
                         <a class="navbar-brand" runat="server" href="~/AdminEliminar">Eliminar Usuario</a>
                     </div>
