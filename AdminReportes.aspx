@@ -13,7 +13,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <asp:scriptmanager id="ScriptManager1" runat="server" enablepagemethods="true" xmlns:asp="#unknown" />
+       
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link" href="AdminPrincipal.aspx">Modulo Administrador</a>
