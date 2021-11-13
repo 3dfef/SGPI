@@ -33,6 +33,7 @@ namespace SGPI
                     if (usuario != null)
                     {
                         Session["IdUsuario"] = usuario.IdUsuario;
+                        Session["nombreUsuario"] = usuario.Nombre;
                         switch (usuario.IdRol)
                         {
                             case 1:

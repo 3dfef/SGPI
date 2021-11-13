@@ -11,7 +11,27 @@ namespace SGPI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                using (EntitiesDBSGPI DBEntitiesR = new EntitiesDBSGPI())
+                {
+                    try
+                    {
 
+                        Usuario usuario = DBEntitiesR.Usuario.FirstOrDefault(a => a.IdUsuario ==Convert.ToInt32(Session["IdUsuario"]));
+                        TxtNumeroDocumentoUsuario.Text = usuario.Documento;
+                        TxtNombreUsuario.Text = usuario.Nombre;
+                        TxtApellidosUsuario.Text = usuario.Apellido;
+                        TxtCorreoElectronicoUsuario.Text= usuario.Email;
+                        
+                        
+                    }
+                    catch(Exception except) { }
+
+
+                }
+                lblMostrarUsuario.Text = Session["nombreUsuario"].ToString();
+            }
         }
 
 

@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand active" runat="server" href="~/AdminPrincipal">Crear Usuario</a>
-                              <a class="navbar-brand" runat="server" href="~/AdministradorBuscar">Buscar Usuario</a>
+                              
                         <a class="navbar-brand" runat="server" href="~/AdminModificar">Modificar Usuario</a>
                         <a class="navbar-brand" runat="server" href="~/AdminEliminar">Eliminar Usuario</a>
                     </div>
@@ -32,7 +32,9 @@
             </div>
 
             <div class="container">
-                <h5>Usuario :&nbsp; <asp:Label ID="lblMostrarUsuario" runat="server" Text="Sesión no iniciada"></asp:Label></h5>
+                <h5>Usuario :&nbsp; <asp:Label ID="lblMostrarUsuario" runat="server" Text="Sesión no iniciada">
+
+                                    </asp:Label></h5>
  <asp:Button ID="btnCerrarSesion"  class="btn btn-danger" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesion_Click" /> 
                 <div class="abs-center">
                    

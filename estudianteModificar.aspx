@@ -34,14 +34,10 @@
                             <div class="input-group mt-3 mb-3">
 
                                 <span class="input-group-text">Tipo documento&nbsp;&nbsp; 
-                                    <asp:DropDownList ID="TxtTipoDocumento" runat="server">
-                                        <asp:ListItem Selected="True" Value="        ">  </asp:ListItem>
-                                        <asp:ListItem Value="tarjetaIdentidad"> Tarjeta identidad </asp:ListItem>
-                                        <asp:ListItem Value="CedulaCiudadania"> Cedula de ciudadania </asp:ListItem>
-                                        <asp:ListItem Value="pasaporte"> Pasaporte </asp:ListItem>
-                                        <asp:ListItem Value="cedulaextranjeria"> Cedula de extranjeria </asp:ListItem>
+                                    <asp:DropDownList ID="TxtTipoDocumento" runat="server" DataSourceID="SqlDataSource3" DataTextField="TipoDocumento" DataValueField="IdDocumento">
 
                                     </asp:DropDownList>
+                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT Documento.IdDocumento, Documento.TipoDocumento FROM Documento INNER JOIN Usuario ON Documento.IdDocumento = Usuario.IdDocumento"></asp:SqlDataSource>
                                 </span>
                                 <asp:TextBox ID="TxtNumeroDocumentoUsuario" class="form-control" runat="server" placeholder="Numero de documento" Width="150px"></asp:TextBox>
                                 <br />
@@ -70,12 +66,9 @@
                         <div class="input-group  mb-3">
                             <div class="input-group-prepend"> 
                                 <div class="form-group col">
-                               <span class="input-group-text">Genero&nbsp;&nbsp; <asp:DropDownList ID="txtGenero" runat="server" Width="182px">
-                                        <asp:ListItem Selected="True" Value="        ">  </asp:ListItem>
-                                        <asp:ListItem Value="masculino"> Masculino </asp:ListItem>
-                                        <asp:ListItem Value="femenino"> Femenino </asp:ListItem>
-                                        <asp:ListItem Value="Otro"> Otro </asp:ListItem>                                      
+                               <span class="input-group-text">Genero&nbsp;&nbsp; <asp:DropDownList ID="txtGenero" runat="server" Width="182px" DataSourceID="SqlDataSource2" DataTextField="Genero" DataValueField="IdGenero" OnSelectedIndexChanged="txtGenero_SelectedIndexChanged">
                                     </asp:DropDownList>                                                                                             
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT Genero.* FROM Genero INNER JOIN Usuario ON Genero.IdGenero = Usuario.IdGenero"></asp:SqlDataSource>
                                     </span>                                                                                             
                                     </div>
                                 </div>
@@ -88,29 +81,18 @@
                         </div>
 
                     <!---------------------------------------------------------------------------------------------------------------->
-                    <div class="row">
-                        <div class="input-group  mb-3">
-                            <div class="input-group-prepend"> 
-                                <div class="form-group col">
-                                  <span class="input-group-text">Rol</span>
-                                    <asp:RadioButtonList class="radio" ID="RadioButtonList1" runat="server">
-                                        <asp:ListItem>Estudiante</asp:ListItem>
-                                        <asp:ListItem>Coordinador</asp:ListItem>
-                                    </asp:RadioButtonList>
+              
 
 
 
 
 
-                                    </div></div>
+                                    
                               <div class="form-group col">
                                 <span class="input-group-text">Programa</span>
-                                <asp:RadioButtonList ID="OpcionesProgramas" runat="server" Class="form-control">
-                                    <asp:ListItem>Especializacion Seguridad de la informacion</asp:ListItem>
-                                    <asp:ListItem>Maestria en gestio TI</asp:ListItem>
-                                    <asp:ListItem>Maestria en Gestion Ambiental</asp:ListItem>
-                                    <asp:ListItem>Tecnico en sistemas</asp:ListItem>
+                                <asp:RadioButtonList ID="OpcionesProgramas" runat="server" Class="form-control" DataSourceID="SqlDataSource1" DataTextField="Programa" DataValueField="IdPrograma">
                                 </asp:RadioButtonList>
+                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGPI-DBConnectionString %>" SelectCommand="SELECT Programa.IdPrograma, Programa.Programa FROM Programa INNER JOIN Usuario ON Programa.IdPrograma = Usuario.IdPrograma"></asp:SqlDataSource>
                             </div>
                         </div></div>
                     <br />
@@ -118,7 +100,7 @@
                     <div class="row">
                         <div class="form-group col">
                             <div class="input-group mt-3 mb-3">
-
+                                  <span class="input-group-text">Certificado electoral</span>
 
                                 <asp:FileUpload ID="FileUpload1" class="form-control" runat="server" Width="300px" />
 
@@ -127,6 +109,7 @@
                     <!---------------------------------------------------------------------------------------------------------------->
                     <div class="row">
                         <div class="form-group col">
+
                             <div class="input-group mt-3 mb-3">
                                       <asp:Button ID="btnActualizar"  class="btn btn-success mb-2 " runat="server" Text="Modificar"  Width="88px" OnClick="btnActualizar_Click"  />
                                       <asp:Button ID="btnCancelar"  class="btn btn-danger mb-2" runat="server" Text="Cancelar" OnClick="btnCancelar_Click"    />
@@ -134,9 +117,7 @@
 
                                 </div></div></div>
 
-                    </div>
-
-</div>
+       
     </form>
 </body>
 </html>
