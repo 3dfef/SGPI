@@ -139,6 +139,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminEliminar.aspx" />
+    <Content Include="AdministradorBuscar.aspx" />
     <Content Include="AdminPrincipal.aspx" />
     <Content Include="AdminReportes.aspx" />
     <Content Include="Contact.aspx" />
@@ -314,6 +315,13 @@
     </Compile>
     <Compile Include="AdminEliminar.aspx.designer.cs">
       <DependentUpon>AdminEliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorBuscar.aspx.cs">
+      <DependentUpon>AdministradorBuscar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorBuscar.aspx.designer.cs">
+      <DependentUpon>AdministradorBuscar.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPrincipal.aspx.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
